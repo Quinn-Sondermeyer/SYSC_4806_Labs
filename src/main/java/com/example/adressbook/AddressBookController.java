@@ -2,21 +2,27 @@ package com.example.adressbook;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/addressBook")
 public class AddressBookController {
     private BuddyInfoRepository buddyInfoRepository;
-    @GetMapping("/{id}")
-    public String adressBook(@RequestParam("id") AddressBook addressBook, Model model) {
+    @GetMapping("/addressBook")
+    public String adressBookForm(Model model) {
 
-        model.addAttribute("id", addressBook.getId());
-        model.addAttribute("book", addressBook.getBook());
+        model.addAttribute("addressBook", new AddressBook());
+//        model.addAttribute("book", addressBook.getBook());
 
         return "addressBook";
+    }
+
+    @PostMapping("/addressBook")
+    public String adressBookSubmit(@ModelAttribute AddressBook addressbook, Model model) {
+
+        model.addAttribute("AddressBook", addressbook);
+//        model.addAttribute("book", addressBook.getBook());
+
+        return "result";
     }
 
 }

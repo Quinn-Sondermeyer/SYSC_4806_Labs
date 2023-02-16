@@ -10,6 +10,5 @@ public interface BuddyInfoRepository extends CrudRepository<BuddyInfo, Long> {
     Optional<BuddyInfo> findById(Long id);
     List<BuddyInfo> findByphone(String phone);
     List<BuddyInfo> findByAddress(String address);
-
-    BuddyInfo findByName(String name);
+    List<BuddyInfo> findByName(String name);
 }

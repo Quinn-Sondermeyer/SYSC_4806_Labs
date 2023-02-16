@@ -19,16 +19,21 @@ public class AddressBook{
     /**
      * Default Constructor
      */
-    public AddressBook() {book = new ArrayList<BuddyInfo>();}
+    public AddressBook() {
+        book = new ArrayList<BuddyInfo>();
 
-//    /**
-//     * Constructor
-//     * @param name
-//     */
-//    public AddressBook(String name) {
-//        book = new ArrayList<BuddyInfo>();
-//        this.name = name;
-//    }
+    }
+
+
+
+    /**
+     * Constructor
+     * @param id
+     */
+    public AddressBook(Long id) {
+        book = new ArrayList<BuddyInfo>();
+        this.id = id;
+    }
 
 
 
@@ -51,17 +56,17 @@ public class AddressBook{
 //        }
 //    }
 
-//    @Override
-//    public String toString() {
-//        StringBuilder temp = new StringBuilder("");
-//        for (BuddyInfo b : book){
-//            temp.append(b.toString() + "\n");
-//        }
-//        String Adressbook = temp.toString();
-//        return String.format(
-//                "AdressBook[id=%d, temp='%s']",
-//                id, Adressbook);
-//    }
+    @Override
+    public String toString() {
+        StringBuilder temp = new StringBuilder("");
+        for (BuddyInfo b : book){
+            temp.append(b.toString() + "\n");
+        }
+        String Adressbook = temp.toString();
+        return String.format(
+                "AdressBook[id=%d, temp='%s']",
+                id, Adressbook);
+    }
 
     /*
         Getters and setters
